@@ -3,14 +3,13 @@ import TodoService from "./TodoService.js";
 const _todoService = new TodoService()
 
 function _drawTodos() {
-	//WHAT IS MY PURPOSE?
 	let todos = _todoService.Todos
 	console.log("todos:", todos)
 	let template = ''
 	todos.forEach(todo => {
 		template += todo.Template
 	})
-	// document.getElementById("todos").innerHTML = template
+	document.getElementById("incomplete-tasks").innerHTML = template
 }
 
 function _drawError() {

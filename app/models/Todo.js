@@ -8,7 +8,10 @@ export default class Todo {
   }
 
   get Template() {
-    return
+    return `
+        <li>		<input type="checkbox" name="incomplete-todo"><label>${this.description}</label>
+        </li>
+    `
 
 
   }

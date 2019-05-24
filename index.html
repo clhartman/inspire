@@ -24,13 +24,17 @@
 		<div id="todo-error">
 		</div>
 		<div id="todos">
-			<!-- template here -->
 			<p>
 				<label for="todo">Get Stuff Done</label>
 				<form onsubmit="app.controllers.todoController.addTodo(event)">
 					<input type="text" name="todo">
 					<!-- input -->
 				</form>
+				<ul id="incomplete-tasks">
+					<!-- <li>
+						<input type="checkbox" name="incomplete-todo">
+					</li> -->
+				</ul>
 			</p>
 		</div>
 	</div>
