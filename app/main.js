@@ -1,5 +1,5 @@
 import WeatherController from "./components/weather/weather-controller.js";
-import TodoController from "./components/todo/todo-controller.js";
+import TodoController from "./components/todo/TodoController.js";
 
 // HEY WHERE ARE ALL OF YOUR CONTROLLERS??
 class App {

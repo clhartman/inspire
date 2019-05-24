@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body id="bg-image">
+<body id="bg-image" classs="container-fluid">
 	<div id="weather">
 		Your Weather Template
 	</div>
@@ -20,11 +20,19 @@
 		The Quote
 	</div>
 
-	<div>
-		A Todo List
-		<div id="todo-error"></div>
-		<form onsubmit=""></form>
-		<div id="todos"></div>
+	<div class="container-fluid d-flex justify-content-end align-items-end">
+		<div id="todo-error">
+		</div>
+		<div id="todos">
+			<!-- template here -->
+			<p>
+				<label for="todo">Get Stuff Done</label>
+				<form onsubmit="app.controllers.todoController.addTodo(event)">
+					<input type="text" name="todo">
+					<!-- input -->
+				</form>
+			</p>
+		</div>
 	</div>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>

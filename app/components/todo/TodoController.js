@@ -1,9 +1,16 @@
-import TodoService from "./todo-service.js";
+import TodoService from "./TodoService.js";
 
 const _todoService = new TodoService()
 
 function _drawTodos() {
 	//WHAT IS MY PURPOSE?
+	let todos = _todoService.Todos
+	console.log("todos:", todos)
+	let template = ''
+	todos.forEach(todo => {
+		template += todo.Template
+	})
+	// document.getElementById("todos").innerHTML = template
 }
 
 function _drawError() {
@@ -14,6 +21,7 @@ function _drawError() {
 
 export default class TodoController {
 	constructor() {
+		_todoService.addSubscriber('todos', _drawTodos)
 		_todoService.addSubscriber('error', _drawError)
 		_todoService.getTodos()
 		// Don't forget to add your subscriber
@@ -21,9 +29,10 @@ export default class TodoController {
 
 	addTodo(e) {
 		e.preventDefault()
-		var form = e.target
+		var form = e.target //html element that triggered the form submission
 		var todo = {
 			// DONT FORGET TO BUILD YOUR TODO OBJECT
+			description: form.todo.value
 		}
 
 		_todoService.addTodo(todo)

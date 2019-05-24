@@ -1,6 +1,10 @@
+import Todo from "../../models/Todo.js";
+
 // @ts-ignore
+
+//Private
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/jake/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Courtney/todos/',
 	timeout: 3000
 });
 
@@ -13,25 +17,34 @@ let _subscribers = {
 	error: []
 }
 
-function _setState(prop, data) {
-	_state[prop] = data
-	_subscribers[prop].forEach(fn => fn())
+function _setState(propName, data) {
+	_state[propName] = data
+	_subscribers[propName].forEach(fn => fn())
 }
+
+
+//Public
 
 export default class TodoService {
 	get TodoError() {
 		return _state.error
 	}
 
-	addSubscriber(prop, fn) {
-		_subscribers[prop].push(fn)
+	get Todos() {
+		return _state.todos.map(t => new Todo(t))
+	}
+
+	addSubscriber(propName, fn) {
+		_subscribers[propName].push(fn)
 	}
 
 	getTodos() {
 		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
+				let data = res.data.data.map(t => new Todo(t))
 				// WHAT DO YOU DO WITH THE RESPONSE?
+				_setState('todos', data)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
@@ -39,7 +52,11 @@ export default class TodoService {
 	addTodo(todo) {
 		todoApi.post('', todo)
 			.then(res => {
-				// WHAT DO YOU DO AFTER CREATING A NEW TODO?
+				console.log(res)
+				//this.getTodos() - this option would update Todo List by refreshing the entire list
+				let newTodo = new Todo(res.data.data)
+				let todos = [..._state.todos, newTodo]
+				_setState('todos', todos)
 			})
 			.catch(err => _setState('error', err.response.data))
 	}
