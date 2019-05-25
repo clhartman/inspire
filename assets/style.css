@@ -2,3 +2,15 @@
   color: red;
   font-size: 2em;
 }
+
+.h100 {
+    height: 100vh;
+}
+
+.background-image {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+

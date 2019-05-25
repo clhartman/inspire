@@ -43,7 +43,6 @@ export default class TodoService {
 		todoApi.get()
 			.then(res => {
 				let data = res.data.data.map(t => new Todo(t))
-				// WHAT DO YOU DO WITH THE RESPONSE?
 				_setState('todos', data)
 			})
 			.catch(err => _setState('error', err.response.data))
@@ -61,13 +60,15 @@ export default class TodoService {
 			.catch(err => _setState('error', err.response.data))
 	}
 
+	//pick up here - working on updating the checkbox status
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
-		// Be sure to change the completed property to its opposite
-		// todo.completed = !todo.completed <-- THIS FLIPS A BOOL
-
+		todo.completed = !todo.completed //flips the bool
 		todoApi.put(todoId, todo)
 			.then(res => {
+				letnewTodo = new Todo(res.data.data._id)
+				let todos = [..._state.todos, newTodo]
+				_setState('todos', todos)
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
 			.catch(err => _setState('error', err.response.data))

@@ -30,10 +30,8 @@ export default class TodoController {
 		e.preventDefault()
 		var form = e.target //html element that triggered the form submission
 		var todo = {
-			// DONT FORGET TO BUILD YOUR TODO OBJECT
 			description: form.todo.value
 		}
-
 		_todoService.addTodo(todo)
 	}
 
