@@ -8,18 +8,6 @@ function _drawImage() {
   document.getElementById("bg-image").setAttribute('background', image.Template)
 }
 
-// function _drawApod() {
-//   // 1. get the information
-//   let apod = _apodService.Apod
-//   // 2. render info to the dom
-//   document.querySelector('#apod-data').innerHTML = apod.Template
-//   document.querySelector('.apod-bg').style.backgroundImage = `url('${apod.img}')`
-// }
-
-
-
-
-
 
 //Public
 export default class ImageController {

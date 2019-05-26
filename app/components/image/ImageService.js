@@ -39,7 +39,7 @@ export default class ImageService {
 				let data = new Image(res.data)
 				_setState('images', data)
 			})
-			.catch(err => console.log(err))
+		//.catch(err => console.log(err))
 	}
 
 }

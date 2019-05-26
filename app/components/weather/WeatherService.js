@@ -1,6 +1,7 @@
-import Weather from "../../models/weather.js";
-
+import Weather from "../../models/Weather.js";
 // @ts-ignore
+
+//Private
 const weatherApi = axios.create({
 	baseURL: "//bcw-sandbox.herokuapp.com/api/weather",
 	timeout: 3000
@@ -14,19 +15,21 @@ let _subscribers = {
 	weather: []
 }
 
-function _setState(prop, data) {
-	_state[prop] = data
-	_subscribers[prop].forEach(fn => fn());
+function _setState(propName, data) {
+	_state[propName] = data
+	_subscribers[propName].forEach(fn => fn());
 }
 
 
+
+//Public
 export default class WeatherService {
 	get Weather() {
 		return new Weather(_state.weather) //this is how you make a copy of a single object instead of an array (other services will be constructed similarly to this)
 	}
 
-	addSubscriber(prop, fn) {
-		_subscribers[prop].push(fn)
+	addSubscriber(propName, fn) {
+		_subscribers[propName].push(fn)
 	}
 
 	getWeather() {

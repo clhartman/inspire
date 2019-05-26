@@ -1,4 +1,4 @@
-import WeatherController from "./components/weather/weather-controller.js";
+import WeatherController from "./components/weather/WeatherController.js";
 import TodoController from "./components/todo/TodoController.js";
 import ImageController from "./components/image/ImageController.js";
 
