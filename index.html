@@ -14,17 +14,13 @@
 <body id="bg-image" class="h100 container-fluid background-image">
 	<div class="row">
 		<div class="col-9"></div>
-		<div class="col-3 container d-flex justify-content-end align-items-start" id="weather">
+		<div class="col-2 container d-flex justify-content-end align-items-start text-center rounded" id="weather">
 			<!-- <ul>
 				<p>City</p>
 				<p>Weather</p>
 			</ul> -->
 		</div>
 	</div>
-	<div id="quote">
-		The Quote
-	</div>
-
 	<div class="container-fluid d-flex justify-content-end align-items-end">
 		<div id="todo-error">
 		</div>
@@ -37,12 +33,17 @@
 				</form>
 				<p id="incomplete-tasks">
 					<!-- <li>
-						<input type="checkbox" name="incomplete-todo">
-					</li> -->
+							<input type="checkbox" name="incomplete-todo">
+						</li> -->
 				</p>
 			</p>
 		</div>
 	</div>
+	<footer id="footer" class="fixed-bottom footer row text-center">
+		<div class="col-10 container-fluid d-flex justify-content-center quote rounded" id="quote" onmouseover="mouseOver(event)"
+			onmouseout="mouseOut()">
+		</div>
+	</footer>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>

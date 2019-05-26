@@ -13,4 +13,28 @@
   background-size: cover;
 }
 
+.fixed-bottom {
+  padding-bottom: 20px;
+}
+
+.quote {
+  color: white;
+  background-color: rgba(87, 87, 87, 0.424);
+}
+
+.weather-stuff {
+  color: white;
+  background-color: rgba(87, 87, 87, 0.424);
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.weather-specifics {
+  margin-bottom: 0px;
+}
+
+
+
 
