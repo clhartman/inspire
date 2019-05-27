@@ -51,7 +51,6 @@ export default class TodoService {
 		todoApi.post('', todo)
 			.then(res => {
 				console.log(res)
-				//this.getTodos() - this option would update Todo List by refreshing the entire list
 				let newTodo = new Todo(res.data.data)
 				let todos = [..._state.todos, newTodo]
 				_setState('todos', todos)
@@ -59,7 +58,6 @@ export default class TodoService {
 			.catch(err => _setState('error', err.response.data))
 	}
 
-	//pick up here - working on updating the checkbox status
 	toggleTodoStatus(todoId) {
 		let todo = _state.todos.find(todo => todo._id == todoId)
 		todo.completed = !todo.completed //flips the bool
@@ -67,7 +65,6 @@ export default class TodoService {
 			.then(res => {
 				this.getTodos()
 
-				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
 			.catch(err => _setState('error', err.response.data))
 	}

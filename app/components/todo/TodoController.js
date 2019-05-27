@@ -5,10 +5,15 @@ const _todoService = new TodoService()
 function _drawTodos() {
 	let todos = _todoService.Todos
 	let template = ''
+	let todoCount = 0
 	todos.forEach(todo => {
+		if (todo.completed == false) {
+			todoCount++
+		}
 		template += todo.Template
 	})
 	document.getElementById("incomplete-tasks").innerHTML = template
+	document.getElementById("incomplete-count").innerHTML = todoCount
 }
 
 
@@ -33,6 +38,7 @@ export default class TodoController {
 			description: form.todo.value
 		}
 		_todoService.addTodo(todo)
+		form.todo.value = ''
 	}
 
 	toggleTodoStatus(todoId) {
