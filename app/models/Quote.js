@@ -6,7 +6,7 @@ export default class Quote {
 
   get Template() {
     return `
-    <p>${this.body}</p>
+    <p>${this.body} ~ ${this.author}</p>
     `
   }
 

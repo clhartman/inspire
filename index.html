@@ -17,24 +17,20 @@
 	<div class="row">
 		<div class="col-9"></div>
 		<div class="col-2 container d-flex justify-content-end align-items-start text-center rounded" id="weather">
-			<!-- <ul>
-				<p>City</p>
-				<p>Weather</p>
-			</ul> -->
 		</div>
 	</div>
 	<div class="container-fluid d-flex justify-content-end align-items-end">
 		<div id="todo-error">
 		</div>
-		<div id="todos" class="todos">
+		<div id="todos" class="todos rounded">
 			<p>
 				<form class="new-todo" onsubmit="app.controllers.todoController.addTodo(event)">
-					<input type="text" class="new-todo" placeholder="Get Stuff Done" name="todo">
+					<input type="text" class="new-todo rounded" placeholder="New Task" name="todo">
 				</form>
 				<div class="form-check">
-					<p id="incomplete-tasks">
+					<p id="incomplete-tasks"></p>
+					<p>Left to Do: </p>
 				</div>
-			</p>
 			</p>
 		</div>
 	</div>

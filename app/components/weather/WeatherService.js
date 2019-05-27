@@ -25,7 +25,7 @@ function _setState(propName, data) {
 //Public
 export default class WeatherService {
 	get Weather() {
-		return new Weather(_state.weather) //this is how you make a copy of a single object instead of an array (other services will be constructed similarly to this)
+		return new Weather(_state.weather)
 	}
 
 	addSubscriber(propName, fn) {
