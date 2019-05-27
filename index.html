@@ -26,22 +26,14 @@
 	<div class="container-fluid d-flex justify-content-end align-items-end">
 		<div id="todo-error">
 		</div>
-		<div id="todos">
+		<div id="todos" class="todos">
 			<p>
-				<form onsubmit="app.controllers.todoController.addTodo(event)">
-					<input type="text" placeholder="Get Stuff Done" name="todo">
-					<p id="incomplete-tasks">
-						<p> <input class="form-check" name="incomplete-todo" type="checkbox" ${this.completed ? 'checked' : '' }
-								onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')"> <label
-								class="form-check-label ${this.completed ? 'strikethrough' : ''}">${this.description}</label><span
-								onclick="app.controllers.todoController.removeTodo('${this._id}')">
-								<i class="far fa-trash-alt"></i>
-						</p>
+				<form class="new-todo" onsubmit="app.controllers.todoController.addTodo(event)">
+					<input type="text" class="new-todo" placeholder="Get Stuff Done" name="todo">
 				</form>
-
-				<!-- <li>
-							<input type="checkbox" name="incomplete-todo">
-						</li> -->
+				<div class="form-check">
+					<p id="incomplete-tasks">
+				</div>
 			</p>
 			</p>
 		</div>

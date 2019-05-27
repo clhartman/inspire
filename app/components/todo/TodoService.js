@@ -65,10 +65,8 @@ export default class TodoService {
 		todo.completed = !todo.completed //flips the bool
 		todoApi.put(todoId, todo)
 			.then(res => {
-				// this.getTodos()
-				letnewTodo = new Todo(res.data.data._id)
-				let todos = [..._state.todos, newTodo]
-				_setState('todos', todos)
+				this.getTodos()
+
 				//DO YOU WANT TO DO ANYTHING WITH THIS?
 			})
 			.catch(err => _setState('error', err.response.data))

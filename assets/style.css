@@ -39,6 +39,15 @@
   margin-bottom: 0px;
 }
 
+.todos {
+  color: white;
+  background-color: rgba(87, 87, 87, 0.424);
+}
+
+.new-todo {
+  text-align: center;
+}
+
 
 
 
