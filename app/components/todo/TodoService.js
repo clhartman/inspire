@@ -4,7 +4,7 @@ import Todo from "../../models/Todo.js";
 
 //Private
 const todoApi = axios.create({
-	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Courtney/todos/',
+	baseURL: 'https://bcw-sandbox.herokuapp.com/api/Courtney/todos',
 	timeout: 3000
 });
 
@@ -39,7 +39,6 @@ export default class TodoService {
 	}
 
 	getTodos() {
-		console.log("Getting the Todo List")
 		todoApi.get()
 			.then(res => {
 				let data = res.data.data.map(t => new Todo(t))
@@ -66,6 +65,7 @@ export default class TodoService {
 		todo.completed = !todo.completed //flips the bool
 		todoApi.put(todoId, todo)
 			.then(res => {
+				// this.getTodos()
 				letnewTodo = new Todo(res.data.data._id)
 				let todos = [..._state.todos, newTodo]
 				_setState('todos', todos)
@@ -75,6 +75,10 @@ export default class TodoService {
 	}
 
 	removeTodo(todoId) {
+		todoApi.delete(todoId)
+			.then(res => {
+				this.getTodos()
+			})
 		// This one is on you to write.... 
 		// The http method is delete at the todoId
 	}

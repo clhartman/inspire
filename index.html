@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Inspire</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" href="assets/style.css">
@@ -26,22 +28,27 @@
 		</div>
 		<div id="todos">
 			<p>
-				<label for="todo">Get Stuff Done</label>
 				<form onsubmit="app.controllers.todoController.addTodo(event)">
-					<input type="text" name="todo">
-					<!-- input -->
+					<input type="text" placeholder="Get Stuff Done" name="todo">
+					<p id="incomplete-tasks">
+						<p> <input class="form-check" name="incomplete-todo" type="checkbox" ${this.completed ? 'checked' : '' }
+								onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')"> <label
+								class="form-check-label ${this.completed ? 'strikethrough' : ''}">${this.description}</label><span
+								onclick="app.controllers.todoController.removeTodo('${this._id}')">
+								<i class="far fa-trash-alt"></i>
+						</p>
 				</form>
-				<p id="incomplete-tasks">
-					<!-- <li>
+
+				<!-- <li>
 							<input type="checkbox" name="incomplete-todo">
 						</li> -->
-				</p>
+			</p>
 			</p>
 		</div>
 	</div>
 	<footer id="footer" class="fixed-bottom footer row text-center">
-		<div class="col-10 container-fluid d-flex justify-content-center quote rounded" id="quote" onmouseover="mouseOver(event)"
-			onmouseout="mouseOut()">
+		<div class="col-10 container-fluid d-flex justify-content-center quote rounded" id="quote">
+			<!-- put mouseover and mouseout functions in so that Author shows up on hover -->
 		</div>
 	</footer>
 

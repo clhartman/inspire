@@ -3,6 +3,10 @@
   font-size: 2em;
 }
 
+.strikethrough {
+  text-decoration: line-through;
+}
+
 .h100 {
     height: 100vh;
 }

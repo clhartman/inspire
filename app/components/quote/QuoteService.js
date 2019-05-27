@@ -46,6 +46,10 @@ export default class QuoteService {
 			.catch(err => console.log(err))
 	}
 
+	mouseOver() {
+
+	}
+
 
 
 

@@ -1,6 +1,6 @@
 export default class Todo {
   constructor(data) {
-    this._id = data._id
+    this._id = data._id || ''
     this.completed = data.completed
     this.user = data.user
     this.description = data.description
@@ -9,7 +9,8 @@ export default class Todo {
 
   get Template() {
     return `
-        <p>		<input class="form-check-input"name="incomplete-todo" type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.controllers.TodoController.toggleTodoStatus('${this._id}')"><label class="form-check.label ${this.completed ? 'strikethrough' : ''}">${this.description}</label>
+        <p>		<input class="form-check" name="incomplete-todo" type="checkbox" ${this.completed ? 'checked' : ''} onclick="app.controllers.todoController.toggleTodoStatus('${this._id}')"> <label class="form-check-label ${this.completed ? 'strikethrough' : ''}">${this.description}</label><span onclick="app.controllers.todoController.removeTodo('${this._id}')">
+      <i class="far fa-trash-alt"></i>
         </p>
     `
 
@@ -25,7 +26,6 @@ export default class Todo {
     <label class="form-check-label ${this.completed ? 'strikethrough' : ''}">
       ${this.description}
     </label>
-    <span onclick="app.controllers.todoController.removeTodo('${this._id}')">
-      <i class="far fa-trash-alt"></i>
+
     </span>
 			</div>  */

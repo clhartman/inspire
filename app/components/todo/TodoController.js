@@ -12,6 +12,8 @@ function _drawTodos() {
 	document.getElementById("incomplete-tasks").innerHTML = template
 }
 
+
+
 function _drawError() {
 	console.error('[TODO ERROR]', _todoService.TodoError)
 	//document.querySelector('#todo-error').textContent = `${_todoService.TodoError.message}`

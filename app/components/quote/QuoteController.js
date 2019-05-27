@@ -25,4 +25,13 @@ export default class QuoteController {
     _quoteService.getQuote()
   }
 
+  // _mouseOver(event) {
+  //   // event.preventDefault()
+  //   // var form = e.target //html element that triggered the form submission
+  //   let mouseOver = {
+  //     description: this.author
+  //   }
+  //   _quoteService.mouseOver(event)
+  // }
+
 }
