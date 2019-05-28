@@ -10,28 +10,42 @@
 		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
 		integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+
 	<link rel="stylesheet" href="assets/style.css">
 </head>
 
-<body id="bg-image" class="h100 container-fluid background-image">
+<body id="bg-image" class="h100 container-fluid background-image text-details">
 	<div class="row">
 		<div class="col-9"></div>
 		<div class="col-2 container d-flex justify-content-end align-items-start text-center rounded" id="weather">
 		</div>
 	</div>
-	<div class="container-fluid d-flex justify-content-end align-items-end">
-		<div id="todo-error">
+	<div class="row">
+		<div class="col-2"></div>
+		<div class="col-6 d-flex justify-content-center">
+			<div class="clock">
+				<span id="hr">00</span>
+				<span> : </span>
+				<span id="min">00</span>
+				<span> : </span>
+				<span id="sec">00</span>
+			</div>
 		</div>
-		<div id="todos" class="todos rounded">
-			<p>
-				<form class="new-todo" onsubmit="app.controllers.todoController.addTodo(event)">
-					<input type="text" class="new-todo rounded" placeholder="New Task" name="todo">
-				</form>
-				<div class="form-check">
-					<p id="incomplete-tasks"></p>
-					<p>Left to Do: <span id="incomplete-count"></span></p>
-				</div>
-			</p>
+		<div class="container-fluid d-flex justify-content-end align-items-end">
+			<div id="todo-error">
+			</div>
+			<div id="todos" class="todos rounded">
+				<p>
+					<form class="new-todo" onsubmit="app.controllers.todoController.addTodo(event)">
+						<input type="text" class="new-todo rounded" placeholder="New Task" name="todo">
+					</form>
+					<div class="form-check">
+						<p id="incomplete-tasks"></p>
+						<p>Left to Do: <span id="incomplete-count"></span></p>
+					</div>
+				</p>
+			</div>
 		</div>
 	</div>
 	<footer id="footer" class="fixed-bottom footer row text-center">
@@ -40,6 +54,7 @@
 		</div>
 	</footer>
 
+	<script type="text/javascript" src="app/Clock.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
 	<script type="module" src="app/main.js"></script>
 </body>

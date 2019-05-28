@@ -11,6 +11,11 @@
     height: 100vh;
 }
 
+.text-details {
+  font-family: 'Raleway';
+  font-size: 1.2rem;
+}
+
 .background-image {
   background-position: center;
   background-repeat: no-repeat;
@@ -50,6 +55,14 @@
 
 .form-check {
   text-align: center;
+}
+
+.clock {
+  text-align: center;
+  width: auto;
+  height: auto;
+  color: white;
+  font-size: 6rem;
 }
 
 

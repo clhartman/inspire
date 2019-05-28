@@ -11,8 +11,7 @@ export default class Weather {
   get Template() {
     return `
     <ul class="weather-stuff">
-        <p class="weather-specifics">${this.temp} °F</p>
-        <p class="weather-specifics">in <img src="http://openweathermap.org/img/w/${this.icon}.png"/></p>
+        <p class="weather-specifics">${this.temp} °F <img src="http://openweathermap.org/img/w/${this.icon}.png"/></p>
 				<p class="weather-specifics">in ${this.name}</p>
 			</ul>
     `
