@@ -1,4 +1,4 @@
-import Weather from "../../models/Weather.js";
+import Weather from "../../models/weather.js";
 // @ts-ignore
 
 //Private
